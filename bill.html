@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            position: relative;
+            display: none;
+        }
+
+        .parent img{
+            height: 80vh;
+        }
+
+        #date{
+            position: absolute;
+            top: 190px;
+            left: 325px;
+        }
+
+        #name{
+            position: absolute;
+            top: 200px;
+            left: 70px;
+        }
+
+        #no{
+            position: absolute;
+            top: 242px;
+            left: 85px;
+        }
+
+        #amount{
+            position: absolute;
+            bottom: 142px;
+            left: 334px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <label for="iname">Enter Name</label>
+        <input type="text" name="iname" id="iname">
+    </div>
+
+    <div>
+        <label for="idate">Enter Date</label>
+        <input type="date" name="idate" id="idate">
+    </div>
+
+    <div>
+        <label for="iamount">Enter Amount</label>
+        <input type="text" name="iamount" id="iamount">
+    </div>
+
+    <div>
+        <button onclick="bill()">Submit</button>
+    </div>
+
+    <div class="parent" id="parent">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2023/12/369509261/AN/RY/YS/844696/a4-size-bill-book.jpg" alt="">
+    
+    
+    <small id="date"></small>
+    <h5 id="name"></h5>
+    <small id="no"></small>
+    <h5 id="amount"></h5>
+</div>
+
+    <script src="/js/index.js"></script>
+
+</body>
+</html>

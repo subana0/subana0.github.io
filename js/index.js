@@ -45,20 +45,33 @@
 
 
 
-function table() {
-    let app = document.getElementById('app')
-    app.innerHTML =""
+// function table() {
+//     let app = document.getElementById('app')
+//     app.innerHTML =""
 
-    let a = document.getElementById('num').value;
-    for(i = 1; i <= 10; i++) {
-        app.innerHTML += `${a} x ${i} = ${a * i} <br>`
-    }
-}
+//     let a = document.getElementById('num').value;
+//     for(i = 1; i <= 10; i++) {
+//         app.innerHTML += `${a} x ${i} = ${a * i} <br>`
+//     }
+// }
 
-table()
+// table()
 
 function p(data) {
     console.log(data)
 }
 
-p("hello world")
+// p("hello world")
+
+function bill(){
+    const name = document.getElementById('iname').value;
+    const date = document.getElementById('idate').value;
+    const amount = document.getElementById('iamount').value;
+
+    document.getElementById('name').innerHTML = name;
+    document.getElementById('date').innerHTML = date;
+    document.getElementById('amount').innerHTML = amount;
+
+    document.getElementById('parent').style = "display:block"
+}
+
