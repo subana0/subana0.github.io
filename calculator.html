@@ -8,39 +8,83 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/index.css">        
 </head>
-<body class="bg-black text-white text-2xl">
+<body class="bg-black text-white">
 
-        <div class="flex items-center h-[100vh]">
+    <header class="bg-[#312222] text-white py-4 sticky top-0">
+        <nav>
+            <div class="container flex justify-between items-center">  
+
+                <div>
+                    <h1 class="text-2xl font-semibold"><span class="text-orange-600">Sub</span>ana</h1>
+                </div>
+
+  
+                <ul class="hidden md:flex gap-20">
+                    <li>
+                        <a href="/">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <a href="/#about">About</a>
+                    </li>
+
+                    <li>   
+                        <a href="/#contact">Contact</a>
+                    </li>
+
+                    <li>   
+                        <a href="/calculator.html">Calculator</a>
+                    </li>
+                </ul>
+
+
+                <div>
+                    <button class="md:hidden" type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example" 
+                        aria-controls="drawer-example">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <a href="#contact" class="font-medium bg-white ml-6 px-4 py-1 rounded hover:shadow-lg text-black">Contact Me</a>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+        <div class="flex items-center h-[100vh] text-2xl">
             <div class="border-4 border-gray-300 w-[90%] sm:w-[50%] md:w-[40%] lg:w-[25%] m-auto rounded-xl overflow-hidden">
                 <div>
-                    <input type="text" class="bg-black w-full px-4 pt-20 pb-4 text-right" readonly value="123456" name="num" id="num">
+                    <input type="text" class="bg-black w-full px-4 pt-20 pb-4 text-right" readonly name="num" id="num">
                 </div>
     
                 <div class="grid grid-cols-4 pt-4">
-                    <button class="bg-slate-600 h-[50px] w-[50px] m-auto rounded-full mb-4">AC</button>
+                    <button onclick="cls()" class="bg-slate-600 h-[50px] w-[50px] m-auto rounded-full mb-4">AC</button>
                     <button class="bg-slate-600 h-[50px] w-[50px] m-auto rounded-full mb-4">+/-</button>
-                    <button class="bg-slate-600 h-[50px] w-[50px] m-auto rounded-full mb-4">%</button>
-                    <button class="bg-orange-400 h-[50px] w-[50px] m-auto rounded-full mb-4"><i class="fa-solid fa-divide"></i></button>
-                    <button class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4">7</button>
-                    <button class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4">8</button>
-                    <button class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4">9</button>
-                    <button class="bg-orange-400 h-[50px] w-[50px] m-auto rounded-full mb-4"><i class="fa-solid fa-xmark"></i></button>
-                    <button class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4">4</button>
-                    <button class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4">5</button>
-                    <button class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4">6</button>
-                    <button class="bg-orange-400 h-[50px] w-[50px] m-auto rounded-full mb-4"><i class="fa-solid fa-minus"></i></button>
-                    <button class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4">1</button>
-                    <button class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4">2</button>
-                    <button class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4">3</button>
-                    <button class="bg-orange-400 h-[50px] w-[50px] m-auto rounded-full mb-4"><i class="fa-solid fa-plus"></i></button>
+                    <button onclick="display('%')" class="bg-slate-600 h-[50px] w-[50px] m-auto rounded-full mb-4">%</button>
+                    <button onclick="display('/')" class="bg-orange-400 h-[50px] w-[50px] m-auto rounded-full mb-4"><i class="fa-solid fa-divide"></i></button>
+                    <button onclick="display('7')" class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4">7</button>
+                    <button onclick="display('8')" class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4">8</button>
+                    <button onclick="display('9')" class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4">9</button>
+                    <button onclick="display('*')" class="bg-orange-400 h-[50px] w-[50px] m-auto rounded-full mb-4"><i class="fa-solid fa-xmark"></i></button>
+                    <button onclick="display('4')" class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4">4</button>
+                    <button onclick="display('5')" class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4">5</button>
+                    <button onclick="display('6')" class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4">6</button>
+                    <button onclick="display('-')" class="bg-orange-400 h-[50px] w-[50px] m-auto rounded-full mb-4"><i class="fa-solid fa-minus"></i></button>
+                    <button onclick="display('1')" class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4">1</button>
+                    <button onclick="display('2')" class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4">2</button>
+                    <button onclick="display('3')" class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4">3</button>
+                    <button onclick="display('+')" class="bg-orange-400 h-[50px] w-[50px] m-auto rounded-full mb-4"><i class="fa-solid fa-plus"></i></button>
                     <button class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4"><i class="fa-solid fa-calculator"></i></button>
-                    <button class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4">0</button>
-                    <button class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4">.</button>
-                    <button class="bg-orange-400 h-[50px] w-[50px] m-auto rounded-full mb-4"><i class="fa-solid fa-equals"></i></button>
+                    <button onclick="display('0')" class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4">0</button>
+                    <button onclick="display('.')" class="bg-slate-800 h-[50px] w-[50px] m-auto rounded-full mb-4">.</button>
+                    <button onclick="calculate()" class="bg-orange-400 h-[50px] w-[50px] m-auto rounded-full mb-4"><i class="fa-solid fa-equals"></i></button>
                 </div>
             </div>
         </div>
 
+        <script src="/js/calculator.js"></script>
+
 </body>
-</html
+</html>
